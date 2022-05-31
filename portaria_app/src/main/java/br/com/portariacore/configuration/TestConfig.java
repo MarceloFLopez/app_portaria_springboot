@@ -2,7 +2,6 @@ package br.com.portariacore.configuration;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -115,20 +114,5 @@ public class TestConfig implements CommandLineRunner{
 		rr.save(re10);
 		rr.save(re11);
 		
-		List<TabOperacao> list = or.findAll();
-		
-		TabOperacao operacao = new TabOperacao();
-		String nome = "coleta";
-		for (TabOperacao tabOperacao : list) {
-			if(tabOperacao.getName().equalsIgnoreCase(nome)) {
-				operacao = tabOperacao;
-			};
-		}
-		
-		System.out.println(operacao);
-		
 	}
-
-	
-	
 }

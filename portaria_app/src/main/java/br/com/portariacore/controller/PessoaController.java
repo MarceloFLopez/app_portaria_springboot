@@ -15,73 +15,73 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.portariacore.model.TabOperacao;
-import br.com.portariacore.repository.OperacaoRepository;
+import br.com.portariacore.model.TabPessoa;
+import br.com.portariacore.repository.PessoaRepository;
 
 @RestController
-@RequestMapping("/operacao")
-public class OperacaoController {
+@RequestMapping("/pessoa")
+public class PessoaController {
 
 	@Autowired
-	private OperacaoRepository repository;
+	private PessoaRepository repository;
 
 	@RequestMapping("listar")
-	public List<TabOperacao> listAll() {
-		List<TabOperacao> operacoes = repository.findAll();
-		return operacoes;
+	public List<TabPessoa> listAll() {
+		List<TabPessoa> pessoas = repository.findAll();
+		return pessoas;
 	}
 
 	@GetMapping
 	@RequestMapping("buscarId/{id}")
-	public Optional<TabOperacao> findId(@PathVariable Long id) {
-		Optional<TabOperacao> operacao = repository.findById(id);
-		return operacao;
+	public Optional<TabPessoa> findId(@PathVariable Long id) {
+		Optional<TabPessoa> pessoa = repository.findById(id);
+		return pessoa;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarNome/{nome}")
-	public TabOperacao findName(@PathVariable String nome) {
-		List<TabOperacao> list = repository.findAll();
-		TabOperacao operacao = new TabOperacao();
-		for (TabOperacao tabOperacao : list) {
-			if (tabOperacao.getName().equalsIgnoreCase(nome)) {
-				operacao = tabOperacao;
-				return operacao;
+	@RequestMapping("buscarCpf/{cpf}")
+	public TabPessoa findName(@PathVariable String cpf) {
+		List<TabPessoa> list = repository.findAll();
+		TabPessoa pessoa = new TabPessoa();
+		for (TabPessoa tabPessoa : list) {
+			if (tabPessoa.getCpf().equalsIgnoreCase(cpf)) {
+				pessoa = tabPessoa;
+				return pessoa;
 			}
 		}
 		return null;
 	}
 
 	@PostMapping
-	public TabOperacao save(@RequestBody TabOperacao operacao) {
-		TabOperacao operacaoSalvar = repository.save(operacao);
-		return operacaoSalvar;
+	public TabPessoa save(@RequestBody TabPessoa pessoa) {
+		TabPessoa pessoaSalvar = repository.save(pessoa);
+		return pessoaSalvar;
 	}
 
 	@DeleteMapping("delete/{id}")
-	public Optional<TabOperacao> delete(@PathVariable Long id) {
-		Optional<TabOperacao> operacao = null;
+	public Optional<TabPessoa> delete(@PathVariable Long id) {
+		Optional<TabPessoa> pessoa = null;
 		try {
-			operacao = repository.findById(id);
-			repository.delete(operacao.get());
+			pessoa = repository.findById(id);
+			repository.delete(pessoa.get());
 		} catch (ConstraintViolationException e) {
 			System.out.println("Erro: " + e.getMessage());
 		} catch (DataIntegrityViolationException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
-		return operacao;
+		return pessoa;
 
 	}
 
 	@PutMapping
-	public TabOperacao update(@RequestBody TabOperacao operacao) {
+	public TabPessoa update(@RequestBody TabPessoa pessoa) {
 		try {
-			repository.save(operacao);
+			repository.save(pessoa);
 		} catch (ConstraintViolationException e) {
 			System.out.println("Erro: " + e.getMessage());
 		} catch (DataIntegrityViolationException e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
-		return operacao;
+		return pessoa;
 	}
 }
