@@ -1,11 +1,13 @@
-package br.com.portariacore.modelTest;
+package br.com.portariacore.configuration;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import br.com.portariacore.model.TabEmpresa;
 import br.com.portariacore.model.TabOperacao;
@@ -20,8 +22,9 @@ import br.com.portariacore.repository.RegistroRepository;
 import br.com.portariacore.repository.TransporteRepository;
 import br.com.portariacore.repository.UsuarioRepository;
 
-@SpringBootTest
-class DemoApplicationTests {
+@Configuration
+@Profile("test")
+public class TestConfig implements CommandLineRunner{
 
 	@Autowired
 	private PessoaRepository pr;
@@ -40,9 +43,9 @@ class DemoApplicationTests {
 
 	@Autowired
 	private UsuarioRepository ur;
-
-	@Test
-	public void create() {
+	
+	@Override
+	public void run(String... args) throws Exception {
 		TabEmpresa em = new TabEmpresa(null, "12345678911", "EmpresaTest1");
 		TabEmpresa em1 = new TabEmpresa(null, "12345678912", "EmpresaTest2");
 		TabEmpresa em2 = new TabEmpresa(null, "12345678913", "EmpresaTest3");
@@ -112,18 +115,20 @@ class DemoApplicationTests {
 		rr.save(re10);
 		rr.save(re11);
 		
-//		List<TabOperacao> list = or.findAll();
-//		
-//		TabOperacao operacao = new TabOperacao();
-//		String nome = "coleta";
-//		for (TabOperacao tabOperacao : list) {
-//			if(tabOperacao.getName().equalsIgnoreCase(nome)) {
-//				operacao = tabOperacao;
-//			};
-//		}
-//		
-//		System.out.println(operacao);
-
+		List<TabOperacao> list = or.findAll();
+		
+		TabOperacao operacao = new TabOperacao();
+		String nome = "coleta";
+		for (TabOperacao tabOperacao : list) {
+			if(tabOperacao.getName().equalsIgnoreCase(nome)) {
+				operacao = tabOperacao;
+			};
+		}
+		
+		System.out.println(operacao);
+		
 	}
 
+	
+	
 }

@@ -2,7 +2,6 @@ package br.com.portariacore.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +29,6 @@ public class TabOperacao implements Serializable {
 
 	@Column(length = 50)
 	private String name;
-	private LocalDate data;
+	private LocalDate data = LocalDate.now();
 
 }
