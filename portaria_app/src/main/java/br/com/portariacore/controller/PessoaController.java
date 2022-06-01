@@ -40,7 +40,7 @@ public class PessoaController {
 
 	@GetMapping
 	@RequestMapping("buscarCpf/{cpf}")
-	public TabPessoa findName(@PathVariable String cpf) {
+	public TabPessoa findCpf(@PathVariable String cpf) {
 		List<TabPessoa> list = repository.findAll();
 		TabPessoa pessoa = new TabPessoa();
 		for (TabPessoa tabPessoa : list) {
@@ -52,6 +52,20 @@ public class PessoaController {
 		return null;
 	}
 
+
+	@GetMapping
+	@RequestMapping("buscarNome/{nome}")
+	public TabPessoa findName(@PathVariable String nome) {
+		List<TabPessoa> list = repository.findAll();
+		TabPessoa pessoa = new TabPessoa();
+		for (TabPessoa tabPessoa : list) {
+			if (tabPessoa.getCpf().equalsIgnoreCase(nome)) {
+				pessoa = tabPessoa;
+				return pessoa;
+			}
+		}
+		return null;
+	}
 	@PostMapping
 	public TabPessoa save(@RequestBody TabPessoa pessoa) {
 		TabPessoa pessoaSalvar = repository.save(pessoa);

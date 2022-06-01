@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,13 +19,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_usuario")
+@Table(name = "tb_usuario",uniqueConstraints = { @UniqueConstraint(columnNames = { "login" }) })
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(nullable = false)
+	private String nome;
 	
 	@Column(nullable = false)
 	private String login;
@@ -38,5 +42,5 @@ public class Usuario implements Serializable {
 	@Column(nullable = false)
 	private LocalDateTime data;
 
-
+	
 }

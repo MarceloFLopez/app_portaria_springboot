@@ -9,15 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
 @Entity
-@NamedQueries({ @NamedQuery(name = "WRegistro.listAll", query = "SELECT t FROM WRegistro t") })
 @AllArgsConstructor
 @NoArgsConstructor
 public class WRegistro implements Serializable {
@@ -27,14 +24,15 @@ public class WRegistro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private LocalDateTime date;
 
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn
 	private Usuario usuario;
 
 	@ManyToOne
-	private TabPessoa pessoa;
-
+	@JoinColumn
+	private TabCadastro cadastro;
 
 }
