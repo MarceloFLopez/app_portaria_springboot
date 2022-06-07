@@ -17,6 +17,7 @@ import br.com.portariacore.model.Usuario;
 import br.com.portariacore.model.WRegistro;
 import br.com.portariacore.repository.CadastroRepository;
 import br.com.portariacore.repository.EmpresaRepository;
+import br.com.portariacore.repository.GenericRepository;
 import br.com.portariacore.repository.OperacaoRepository;
 import br.com.portariacore.repository.PessoaRepository;
 import br.com.portariacore.repository.RegistroRepository;
@@ -25,7 +26,7 @@ import br.com.portariacore.repository.UsuarioRepository;
 
 @Configuration
 @Profile("test")
-public class TestConfig implements CommandLineRunner{
+public class TestConfig implements CommandLineRunner {
 
 	@Autowired
 	private PessoaRepository pr;
@@ -44,41 +45,41 @@ public class TestConfig implements CommandLineRunner{
 
 	@Autowired
 	private UsuarioRepository ur;
-	
+
 	@Autowired
 	private CadastroRepository cr;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
-		
+
 		TabEmpresa em = new TabEmpresa(null, "12345678911", "EmpresaTest1");
 		TabEmpresa em1 = new TabEmpresa(null, "12345678912", "EmpresaTest2");
 		TabEmpresa em2 = new TabEmpresa(null, "12345678913", "EmpresaTest3");
 		er.save(em);
 		er.save(em1);
 		er.save(em2);
-		
+
 		TabOperacao op = new TabOperacao(null, "Coleta", LocalDate.now());
 		TabOperacao op1 = new TabOperacao(null, "Entrega", LocalDate.now());
 		TabOperacao op2 = new TabOperacao(null, "Devolução", LocalDate.now());
 		or.save(op);
 		or.save(op1);
 		or.save(op2);
-		
+
 		TabTransporte tt = new TabTransporte(null, "Modelo Teste1", "aaaaa-1111");
 		TabTransporte tt1 = new TabTransporte(null, "Modelo Teste2", "bbbb-2222");
 		TabTransporte tt2 = new TabTransporte(null, "Modelo Teste3", "cccc-3333");
 		TabTransporte tt3 = new TabTransporte(null, "Modelo Teste4", "dddd-1111");
 		TabTransporte tt4 = new TabTransporte(null, "Modelo Teste5", "eeee-2222");
 		TabTransporte tt5 = new TabTransporte(null, "Modelo Teste6", "ffff-3333");
-		TabTransporte tt6= new TabTransporte(null, "Modelo Teste7", "gggg-1111");
+		TabTransporte tt6 = new TabTransporte(null, "Modelo Teste7", "gggg-1111");
 		TabTransporte tt7 = new TabTransporte(null, "Modelo Teste8", "hhhh-2222");
 		TabTransporte tt8 = new TabTransporte(null, "Modelo Teste9", "iiii-3333");
-		TabTransporte tt9= new TabTransporte(null, "Modelo Teste10", "jjjj-1111");
+		TabTransporte tt9 = new TabTransporte(null, "Modelo Teste10", "jjjj-1111");
 		TabTransporte tt10 = new TabTransporte(null, "Modelo Teste11", "kkkk-2222");
 		TabTransporte tt11 = new TabTransporte(null, "Modelo Teste12", "llll-3333");
 		TabTransporte tt12 = new TabTransporte(null, "Modelo Teste13", "mmmm-1111");
-		TabTransporte tt13 = new TabTransporte(null, "Modelo Teste14", "nnnn-2222");	
+		TabTransporte tt13 = new TabTransporte(null, "Modelo Teste14", "nnnn-2222");
 		TabTransporte tt14 = new TabTransporte(null, "Modelo Teste15", "oooo-2222");
 		tr.save(tt);
 		tr.save(tt1);
@@ -96,21 +97,21 @@ public class TestConfig implements CommandLineRunner{
 		tr.save(tt13);
 		tr.save(tt14);
 
-		TabPessoa tp   = new TabPessoa(null, "A", "33024955870");
-		TabPessoa tp1  = new TabPessoa(null, "B", "33024955871");
-		TabPessoa tp2  = new TabPessoa(null, "C", "33024955872");
-		TabPessoa tp3  = new TabPessoa(null, "D", "33024955873");
-		TabPessoa tp4  = new TabPessoa(null, "E", "33024955874");
-		TabPessoa tp5  = new TabPessoa(null, "F", "33024955875");
-		TabPessoa tp6  = new TabPessoa(null, "g", "33024955876");
-		TabPessoa tp7  = new TabPessoa(null, "H", "33024955877");
-		TabPessoa tp8  = new TabPessoa(null, "I", "33024955878");
-		TabPessoa tp9  = new TabPessoa(null, "J", "33024955879");
+		TabPessoa tp = new TabPessoa(null, "A", "33024955870");
+		TabPessoa tp1 = new TabPessoa(null, "B", "33024955871");
+		TabPessoa tp2 = new TabPessoa(null, "C", "33024955872");
+		TabPessoa tp3 = new TabPessoa(null, "D", "33024955873");
+		TabPessoa tp4 = new TabPessoa(null, "E", "33024955874");
+		TabPessoa tp5 = new TabPessoa(null, "F", "33024955875");
+		TabPessoa tp6 = new TabPessoa(null, "g", "33024955876");
+		TabPessoa tp7 = new TabPessoa(null, "H", "33024955877");
+		TabPessoa tp8 = new TabPessoa(null, "I", "33024955878");
+		TabPessoa tp9 = new TabPessoa(null, "J", "33024955879");
 		TabPessoa tp10 = new TabPessoa(null, "K", "33024955880");
 		TabPessoa tp11 = new TabPessoa(null, "L", "33024955881");
 		TabPessoa tp12 = new TabPessoa(null, "M", "33024955882");
 		TabPessoa tp13 = new TabPessoa(null, "N", "33024955883");
-		TabPessoa tp14 = new TabPessoa(null, "P", "33024955884");	
+		TabPessoa tp14 = new TabPessoa(null, "P", "33024955884");
 		pr.save(tp);
 		pr.save(tp1);
 		pr.save(tp2);
@@ -126,13 +127,13 @@ public class TestConfig implements CommandLineRunner{
 		pr.save(tp12);
 		pr.save(tp13);
 		pr.save(tp14);
-		
+
 		TabCadastro cad = new TabCadastro(null, em, op1, tt1, tp1);
 		TabCadastro cad1 = new TabCadastro(null, em1, op2, tt2, tp);
 		TabCadastro cad2 = new TabCadastro(null, em2, op, tt3, tp3);
 		TabCadastro cad3 = new TabCadastro(null, em, op1, tt4, tp4);
 		TabCadastro cad4 = new TabCadastro(null, em1, op1, tt5, tp5);
-		TabCadastro cad5= new TabCadastro(null, em2, op2, tt6, tp6);
+		TabCadastro cad5 = new TabCadastro(null, em2, op2, tt6, tp6);
 		TabCadastro cad6 = new TabCadastro(null, em, op1, tt7, tp7);
 		TabCadastro cad7 = new TabCadastro(null, em1, op2, tt8, tp8);
 		TabCadastro cad8 = new TabCadastro(null, em2, op1, tt9, tp9);
@@ -156,31 +157,35 @@ public class TestConfig implements CommandLineRunner{
 		cr.save(cad12);
 		cr.save(cad13);
 
-		Usuario us = new Usuario(null, "Admin" ,"Admin", "1234", true, LocalDateTime.now());
-		Usuario us1 = new Usuario(null,"NomeTeste1" ,"Porteiro 1", "1478", true, LocalDateTime.of(2022, 10, 10, 14, 10));
-		Usuario us2 = new Usuario(null,"NomeTeste2" ,"Porteiro 2", "7896", true, LocalDateTime.of(2021, 12, 5, 14, 10));
-		Usuario us3 = new Usuario(null,"NomeTeste3" ,"Porteiro 3", "7415", true, LocalDateTime.of(2020, 02, 10, 14, 10));
-		Usuario us4 = new Usuario(null,"NomeTeste4" ,"Porteiro 4", "7415", true, LocalDateTime.of(2020, 02, 10, 14, 10));
+		Usuario us = new Usuario(null, "Admin", "Admin", "1234", true, LocalDateTime.now());
+		Usuario us1 = new Usuario(null, "NomeTeste1", "Porteiro 1", "1478", true,
+				LocalDateTime.of(2022, 10, 10, 14, 10));
+		Usuario us2 = new Usuario(null, "NomeTeste2", "Porteiro 2", "7896", true,
+				LocalDateTime.of(2021, 12, 5, 14, 10));
+		Usuario us3 = new Usuario(null, "NomeTeste3", "Porteiro 3", "7415", true,
+				LocalDateTime.of(2020, 02, 10, 14, 10));
+		Usuario us4 = new Usuario(null, "NomeTeste4", "Porteiro 4", "7415", true,
+				LocalDateTime.of(2020, 02, 10, 14, 10));
 		ur.save(us);
 		ur.save(us1);
 		ur.save(us2);
 		ur.save(us3);
 		ur.save(us4);
-		
+
 		WRegistro re = new WRegistro(null, LocalDateTime.now(), us, cad);
-		WRegistro re1 = new WRegistro(null, LocalDateTime.now(), us1,cad1);
-		WRegistro re2 = new WRegistro(null, LocalDateTime.now(), us2,cad2);
-		WRegistro re3 = new WRegistro(null, LocalDateTime.now(), us3,cad3);
-		WRegistro re4 = new WRegistro(null, LocalDateTime.now(), us1,cad4);
-		WRegistro re5 = new WRegistro(null, LocalDateTime.now(), us2,cad5);
-		WRegistro re6 = new WRegistro(null, LocalDateTime.now(), us,cad6);
-		WRegistro re7 = new WRegistro(null, LocalDateTime.now(), us1,cad7);
-		WRegistro re8 = new WRegistro(null, LocalDateTime.now(), us2,cad8);
-		WRegistro re9 = new WRegistro(null, LocalDateTime.now(), us3,cad9);
-		WRegistro re10 = new WRegistro(null, LocalDateTime.now(), us1,cad10);
-		WRegistro re11 = new WRegistro(null, LocalDateTime.now(), us2,cad11);
-		WRegistro re12 = new WRegistro(null, LocalDateTime.now(), us1,cad12);
-		WRegistro re13 = new WRegistro(null, LocalDateTime.now(), us1,cad13);
+		WRegistro re1 = new WRegistro(null, LocalDateTime.now(), us1, cad1);
+		WRegistro re2 = new WRegistro(null, LocalDateTime.now(), us2, cad2);
+		WRegistro re3 = new WRegistro(null, LocalDateTime.now(), us3, cad3);
+		WRegistro re4 = new WRegistro(null, LocalDateTime.now(), us1, cad4);
+		WRegistro re5 = new WRegistro(null, LocalDateTime.now(), us2, cad5);
+		WRegistro re6 = new WRegistro(null, LocalDateTime.now(), us, cad6);
+		WRegistro re7 = new WRegistro(null, LocalDateTime.now(), us1, cad7);
+		WRegistro re8 = new WRegistro(null, LocalDateTime.now(), us2, cad8);
+		WRegistro re9 = new WRegistro(null, LocalDateTime.now(), us3, cad9);
+		WRegistro re10 = new WRegistro(null, LocalDateTime.now(), us1, cad10);
+		WRegistro re11 = new WRegistro(null, LocalDateTime.now(), us2, cad11);
+		WRegistro re12 = new WRegistro(null, LocalDateTime.now(), us1, cad12);
+		WRegistro re13 = new WRegistro(null, LocalDateTime.now(), us1, cad13);
 		rr.save(re);
 		rr.save(re1);
 		rr.save(re2);

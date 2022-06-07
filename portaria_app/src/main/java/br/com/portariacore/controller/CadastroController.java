@@ -56,7 +56,6 @@ public class CadastroController {
 			System.out.println("Erro: " + e.getMessage());
 		}
 		return cadastro;
-
 	}
 
 	@PutMapping

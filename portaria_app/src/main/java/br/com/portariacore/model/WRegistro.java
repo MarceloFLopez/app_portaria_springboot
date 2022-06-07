@@ -25,7 +25,7 @@ public class WRegistro implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private LocalDateTime date;
+	private LocalDateTime date =  LocalDateTime.now();
 
 	@ManyToOne
 	@JoinColumn
@@ -34,5 +34,9 @@ public class WRegistro implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private TabCadastro cadastro;
+	
+	public void salvarRegistro(Long id,LocalDateTime date,Usuario usuario, TabCadastro cadastro) {
+		WRegistro registro = new WRegistro(id, date, usuario, cadastro);
+	}
 
 }
