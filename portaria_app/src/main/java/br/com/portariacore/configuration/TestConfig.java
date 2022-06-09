@@ -17,7 +17,6 @@ import br.com.portariacore.model.Usuario;
 import br.com.portariacore.model.WRegistro;
 import br.com.portariacore.repository.CadastroRepository;
 import br.com.portariacore.repository.EmpresaRepository;
-import br.com.portariacore.repository.GenericRepository;
 import br.com.portariacore.repository.OperacaoRepository;
 import br.com.portariacore.repository.PessoaRepository;
 import br.com.portariacore.repository.RegistroRepository;

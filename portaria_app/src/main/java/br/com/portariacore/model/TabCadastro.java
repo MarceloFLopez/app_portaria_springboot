@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@AllArgsConstructor
+
 @Table(name = "tb_cadastro")
 @NoArgsConstructor
 public class TabCadastro implements Serializable{
@@ -43,7 +43,15 @@ public class TabCadastro implements Serializable{
 	@JoinColumn(nullable = false)
 	private TabPessoa pessoa;
 	
-	public void salvarCadastro(TabEmpresa empresa, TabOperacao operacao, TabTransporte transporte ,TabPessoa pessoa) {
-		TabCadastro cadastro = new TabCadastro(id, empresa, operacao, transporte, pessoa);
+	public void salvarCadastro(TabCadastro cadastro) {
+		TabCadastro cadastro2 = cadastro;
+	}
+
+	public TabCadastro(Long id, TabEmpresa empresa, TabOperacao operacao, TabTransporte transporte, TabPessoa pessoa) {
+		this.id = id;
+		this.empresa = empresa;
+		this.operacao = operacao;
+		this.transporte = transporte;
+		this.pessoa = pessoa;
 	}
 }
