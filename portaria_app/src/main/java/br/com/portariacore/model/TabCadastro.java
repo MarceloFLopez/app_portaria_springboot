@@ -40,10 +40,6 @@ public class TabCadastro implements Serializable{
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private TabPessoa pessoa;
-	
-	public void salvarCadastro(TabCadastro cadastro) {
-		TabCadastro cadastro2 = cadastro;
-	}
 
 	public TabCadastro(Long id, TabEmpresa empresa, TabOperacao operacao, TabTransporte transporte, TabPessoa pessoa) {
 		this.id = id;

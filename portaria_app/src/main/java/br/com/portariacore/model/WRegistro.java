@@ -35,8 +35,6 @@ public class WRegistro implements Serializable {
 	@JoinColumn
 	private TabCadastro cadastro;
 	
-	public void salvarRegistro(Long id,LocalDateTime date,Usuario usuario, TabCadastro cadastro) {
-		WRegistro registro = new WRegistro(id, date, usuario, cadastro);
-	}
+
 
 }

@@ -1,28 +1,21 @@
 package br.com.portariacore;
 
-import java.util.Optional;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import br.com.portariacore.model.WRegistro;
-import br.com.portariacore.repository.RegistroRepository;
+import br.com.portariacore.repository.CadastroRepository;
 
 @SpringBootTest
 class DemoApplicationTests {
-
+	
 	@Autowired
-	private RegistroRepository rr;
+	private CadastroRepository er;
 	
 	@Test
 	void contextLoads() {
-		Optional<WRegistro> registro = Optional.of(new WRegistro());
-		registro = rr.findById(1l);
-		
-		System.out.println(registro);
-		
-		
+		er.findAll().forEach(a -> System.out.println(a.toString()));			
 	}
-
 }
+
+
