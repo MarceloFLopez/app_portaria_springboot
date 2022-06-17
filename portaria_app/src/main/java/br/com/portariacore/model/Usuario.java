@@ -27,20 +27,18 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(length = 50)
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column(length = 50)
 	private String login;
 	
-	@Column(nullable = false)
+	@Column(length = 50)
 	private String senha;
-	
-	@Column(nullable = false)
+
 	private boolean ativo;
 	
-	@Column(nullable = false)
-	private LocalDateTime data;
+	private LocalDateTime date =  LocalDateTime.now();
 
 	
 }

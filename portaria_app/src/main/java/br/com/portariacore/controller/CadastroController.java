@@ -21,7 +21,7 @@ import br.com.portariacore.repository.CadastroRepository;
 @RestController
 @RequestMapping("/cadastro")
 public class CadastroController {
-
+	//   http://localhost:8080/
 	@Autowired
 	private CadastroRepository repository;
 

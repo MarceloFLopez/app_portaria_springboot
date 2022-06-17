@@ -26,19 +26,19 @@ public class TabCadastro implements Serializable{
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn
 	private TabEmpresa empresa;
 
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn
 	private TabOperacao operacao;
 
 	@ManyToOne
-	@JoinColumn(nullable = false)  
+	@JoinColumn
 	private TabTransporte transporte;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn
 	private TabPessoa pessoa;
 
 	public TabCadastro(Long id, TabEmpresa empresa, TabOperacao operacao, TabTransporte transporte, TabPessoa pessoa) {

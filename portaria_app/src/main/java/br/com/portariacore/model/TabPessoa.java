@@ -27,10 +27,10 @@ public class TabPessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 50)
+	@Column(length = 50)
 	private String name;
 
-	@Column(nullable = false, length = 11)
+	@Column(length = 11)
 	private String cpf;
 
 
