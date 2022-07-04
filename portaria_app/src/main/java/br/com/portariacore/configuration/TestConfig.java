@@ -1,6 +1,5 @@
 package br.com.portariacore.configuration;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,9 +57,9 @@ public class TestConfig implements CommandLineRunner {
 		er.save(em1);
 		er.save(em2);
 
-		TabOperacao op = new TabOperacao(null, "Coleta", LocalDate.now());
-		TabOperacao op1 = new TabOperacao(null, "Entrega", LocalDate.now());
-		TabOperacao op2 = new TabOperacao(null, "Devolução", LocalDate.now());
+		TabOperacao op = new TabOperacao(null, "Coleta", LocalDateTime.now());
+		TabOperacao op1 = new TabOperacao(null, "Entrega", LocalDateTime.now());
+		TabOperacao op2 = new TabOperacao(null, "Devolução", LocalDateTime.now());
 		or.save(op);
 		or.save(op1);
 		or.save(op2);
@@ -199,5 +198,10 @@ public class TestConfig implements CommandLineRunner {
 		rr.save(re11);
 		rr.save(re12);
 		rr.save(re13);
+		
+		
+		
+		
+		   System.out.println(or.findById(1l)); 
 	}
 }

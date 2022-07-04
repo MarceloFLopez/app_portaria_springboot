@@ -25,7 +25,7 @@ public class OperacaoController {
 	@Autowired
 	private OperacaoRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<TabOperacao> listAll() {
 		List<TabOperacao> operacoes = repository.findAll();
 		return operacoes;
@@ -70,7 +70,6 @@ public class OperacaoController {
 			System.out.println("Erro: " + e.getMessage());
 		}
 		return operacao;
-
 	}
 
 	@PutMapping
