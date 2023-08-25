@@ -32,7 +32,7 @@ public class OperacaoController {
 	}
 
 	@GetMapping
-	@RequestMapping("buscarId/{id}")
+	@RequestMapping("/buscarId/{id}")
 	public Optional<TabOperacao> findId(@PathVariable Long id) {
 		Optional<TabOperacao> operacao = repository.findById(id);
 		return operacao;
@@ -58,7 +58,7 @@ public class OperacaoController {
 		return operacaoSalvar;
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Optional<TabOperacao> delete(@PathVariable Long id) {
 		Optional<TabOperacao> operacao = null;
 		try {

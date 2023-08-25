@@ -25,7 +25,7 @@ public class EmpresaController {
 	@Autowired
 	private EmpresaRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<TabEmpresa> listAll() {
 		List<TabEmpresa> empresas = repository.findAll();
 		return empresas;
@@ -39,7 +39,7 @@ public class EmpresaController {
 	}
 
 	@GetMapping
-	@RequestMapping("buscarPlaca/{cnpj}")
+	@RequestMapping("/buscarPlaca/{cnpj}")
 	public TabEmpresa findName(@PathVariable String cnpj) {
 		List<TabEmpresa> list = repository.findAll();
 		TabEmpresa empresa = new TabEmpresa();

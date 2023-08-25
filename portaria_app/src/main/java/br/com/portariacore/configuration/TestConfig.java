@@ -202,6 +202,5 @@ public class TestConfig implements CommandLineRunner {
 		
 		
 		
-		   System.out.println(or.findById(1l)); 
 	}
 }

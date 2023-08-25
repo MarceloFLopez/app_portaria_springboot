@@ -25,14 +25,14 @@ public class WRegistroController {
 	@Autowired
 	private RegistroRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<WRegistro> listAll() {
 		List<WRegistro> registros = repository.findAll();
 		return registros;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarId/{id}")
+	@RequestMapping("/buscarId/{id}")
 	public Optional<WRegistro> findId(@PathVariable Long id) {
 		Optional<WRegistro> registro = repository.findById(id);
 		return registro;
@@ -44,7 +44,7 @@ public class WRegistroController {
 		return registroSalvar;
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Optional<WRegistro> delete(@PathVariable Long id) {
 		Optional<WRegistro> registro = null;
 		try {

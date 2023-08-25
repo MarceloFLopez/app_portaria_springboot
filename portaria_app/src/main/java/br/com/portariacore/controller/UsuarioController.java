@@ -25,14 +25,14 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<Usuario> listAll() {
 		List<Usuario> usuarios = repository.findAll();
 		return usuarios;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarId/{id}")
+	@RequestMapping("/buscarId/{id}")
 	public Optional<Usuario> findId(@PathVariable Long id) {
 		Optional<Usuario> usuario = repository.findById(id);
 		return usuario;
@@ -44,7 +44,7 @@ public class UsuarioController {
 		return usuarioSalvar;
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Optional<Usuario> delete(@PathVariable Long id) {
 		Optional<Usuario> usuario = null;
 		try {

@@ -25,7 +25,7 @@ public class PessoaController {
 	@Autowired
 	private PessoaRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<TabPessoa> listAll() {
 		List<TabPessoa> pessoas = repository.findAll();
 		return pessoas;
@@ -39,7 +39,7 @@ public class PessoaController {
 	}
 
 	@GetMapping
-	@RequestMapping("buscarCpf/{cpf}")
+	@RequestMapping("/buscarCpf/{cpf}")
 	public TabPessoa findCpf(@PathVariable String cpf) {
 		List<TabPessoa> list = repository.findAll();
 		TabPessoa pessoa = new TabPessoa();
@@ -54,7 +54,7 @@ public class PessoaController {
 
 
 	@GetMapping
-	@RequestMapping("buscarNome/{nome}")
+	@RequestMapping("/buscarNome/{nome}")
 	public TabPessoa findName(@PathVariable String nome) {
 		List<TabPessoa> list = repository.findAll();
 		TabPessoa pessoa = new TabPessoa();
@@ -72,7 +72,7 @@ public class PessoaController {
 		return pessoaSalvar;
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Optional<TabPessoa> delete(@PathVariable Long id) {
 		Optional<TabPessoa> pessoa = null;
 		try {

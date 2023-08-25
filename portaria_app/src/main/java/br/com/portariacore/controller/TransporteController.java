@@ -25,21 +25,21 @@ public class TransporteController {
 	@Autowired
 	private TransporteRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<TabTransporte> listAll() {
 		List<TabTransporte> transportes = repository.findAll();
 		return transportes;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarId/{id}")
+	@RequestMapping("/buscarId/{id}")
 	public Optional<TabTransporte> findId(@PathVariable Long id) {
 		Optional<TabTransporte> transporte = repository.findById(id);
 		return transporte;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarPlaca/{placa}")
+	@RequestMapping("/buscarPlaca/{placa}")
 	public TabTransporte findName(@PathVariable String placa) {
 		List<TabTransporte> list = repository.findAll();
 		TabTransporte transporte = new TabTransporte();

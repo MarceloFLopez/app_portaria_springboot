@@ -48,6 +48,14 @@ public class TabCadastro implements Serializable {
 		this.transporte = transporte;
 		this.pessoa = pessoa;
 	}
+	
+	
+
+	public TabCadastro() {
+		super();
+	}
+
+
 
 	public Long getId() {
 		return id;

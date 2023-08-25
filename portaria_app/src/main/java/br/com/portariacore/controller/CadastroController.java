@@ -25,14 +25,14 @@ public class CadastroController {
 	@Autowired
 	private CadastroRepository repository;
 
-	@RequestMapping("listar")
+	@RequestMapping("/listar")
 	public List<TabCadastro> listAll() {
 		List<TabCadastro> cadastros = repository.findAll();
 		return cadastros;
 	}
 
 	@GetMapping
-	@RequestMapping("buscarId/{id}")
+	@RequestMapping("/buscarId/{id}")
 	public Optional<TabCadastro> findId(@PathVariable Long id) {
 		Optional<TabCadastro> cadastro = repository.findById(id);
 		return cadastro;
@@ -44,7 +44,7 @@ public class CadastroController {
 		return cadastroSalvar;
 	}
 
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Optional<TabCadastro> delete(@PathVariable Long id) {
 		Optional<TabCadastro> cadastro = null;
 		try {
