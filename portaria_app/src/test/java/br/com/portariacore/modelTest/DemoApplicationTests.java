@@ -1,50 +1,37 @@
 package br.com.portariacore.modelTest;
 
-import java.time.LocalDateTime;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import br.com.portariacore.model.TabOperacao;
-import br.com.portariacore.repository.CadastroRepository;
-import br.com.portariacore.repository.EmpresaRepository;
-import br.com.portariacore.repository.OperacaoRepository;
-import br.com.portariacore.repository.PessoaRepository;
-import br.com.portariacore.repository.RegistroRepository;
-import br.com.portariacore.repository.TransporteRepository;
-import br.com.portariacore.repository.UsuarioRepository;
 
 @SpringBootTest
 class DemoApplicationTests {
 
-	@Autowired
-	private PessoaRepository pr;
-
-	@Autowired
-	private OperacaoRepository or;
-
-	@Autowired
-	private EmpresaRepository er;
-
-	@Autowired
-	private TransporteRepository tr;
-
-	@Autowired
-	private RegistroRepository rr;
-
-	@Autowired
-	private UsuarioRepository ur;
-	
-	@Autowired
-	private CadastroRepository cr;
-
-	@Test
-	public void create() {
-		
-		
-		TabOperacao tt = new TabOperacao(null, "Teste", LocalDateTime.now());
-		or.save(tt);
+//	@Autowired
+//	private PessoaRepository pr;
+//
+//	@Autowired
+//	private OperacaoRepository or;
+//
+//	@Autowired
+//	private EmpresaRepository er;
+//
+//	@Autowired
+//	private TransporteRepository tr;
+//
+//	@Autowired
+//	private RegistroRepository rr;
+//
+//	@Autowired
+//	private UsuarioRepository ur;
+//	
+//	@Autowired
+//	private CadastroRepository cr;
+//
+//	@Test
+//	public void create() {
+//		
+//		
+//		TabOperacao tt = new TabOperacao(null, "Teste", LocalDateTime.now());
+//		or.save(tt);
 		
 //		TabEmpresa em = new TabEmpresa(null, "12345678911", "EmpresaTest1");
 //		TabEmpresa em1 = new TabEmpresa(null, "12345678912", "EmpresaTest2");
@@ -190,7 +177,7 @@ class DemoApplicationTests {
 //		rr.save(re11);
 //		rr.save(re12);
 //		rr.save(re13);
-
-	}
+//
+//}
 
 }
