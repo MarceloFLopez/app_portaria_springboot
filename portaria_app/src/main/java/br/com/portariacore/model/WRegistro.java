@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -23,15 +24,61 @@ public class WRegistro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private LocalDateTime date =  LocalDateTime.now();
+
+	private LocalDateTime date = LocalDateTime.now();
 
 	@ManyToOne
 	private Usuario usuario;
 
 	@ManyToOne
 	private TabCadastro cadastro;
+
+	public WRegistro(Long id, LocalDateTime date, Usuario usuario, TabCadastro cadastro) {
+		this.id = id;
+		this.date = date;
+		this.usuario = usuario;
+		this.cadastro = cadastro;
+	}
+
+	public WRegistro() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public TabCadastro getCadastro() {
+		return cadastro;
+	}
+
+	public void setCadastro(TabCadastro cadastro) {
+		this.cadastro = cadastro;
+	}
+
+	@Override
+	public String toString() {
+		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", cadastro=" + cadastro + "]";
+	}
+
 	
-
-
 }

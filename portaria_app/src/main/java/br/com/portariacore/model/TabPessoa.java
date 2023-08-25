@@ -33,5 +33,46 @@ public class TabPessoa implements Serializable {
 	@Column(length = 11)
 	private String cpf;
 
+	public TabPessoa(Long id, String name, String cpf) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+	}
+
+	public TabPessoa() {
+		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	@Override
+	public String toString() {
+		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+	}
+	
+	
 
 }

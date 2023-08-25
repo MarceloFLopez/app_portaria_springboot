@@ -34,4 +34,46 @@ public class TabOperacao implements Serializable {
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime data = LocalDateTime.now();
 
+	public TabOperacao(Long id, String name, LocalDateTime data) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.data = data;
+	}
+
+	public TabOperacao() {
+		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "TabOperacao [id=" + id + ", name=" + name + ", data=" + data + "]";
+	}
+	
+	
+
 }
