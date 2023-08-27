@@ -30,7 +30,7 @@ public class TabOperacao implements Serializable {
 
 	@Column(length = 50)
 	private String name;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime data = LocalDateTime.now();
 
@@ -68,12 +68,5 @@ public class TabOperacao implements Serializable {
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
-
-	@Override
-	public String toString() {
-		return "TabOperacao [id=" + id + ", name=" + name + ", data=" + data + "]";
-	}
-	
-	
 
 }
